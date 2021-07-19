@@ -201,7 +201,7 @@ public class PdWorkOrderReportController  extends CmmReportController<PdWorkOrde
 	}
  ```
  - /api/PdWorkOrderReport/ 로 맵핑되면 실행되어 welcome.ftl 템플릿을 출력해준다.
- - 출력전에 출력하시겠습니까? 필요할경우 사용할수있다.
+ - 출력전에 출력하시겠습니까? 를 사용자엑세 물어보고 [예] 버튼을 통해 pdf 페이지로 이동 된다.
  ---
   ## PdWorkOrderReportController
  ```
@@ -212,7 +212,7 @@ public class PdWorkOrderReportController  extends CmmReportController<PdWorkOrde
 	{
  ```
  - /api/PdWorkOrderReport/view 로 맵핑되면 실행되어 PDF를 생성
- - GET 방식으로 CompSeq,PdProdPlan의 정보를 받아온다.
+ - GET 방식 파라미터로 CompSeq,PdProdPlan의 정보를 받아온다.
  - (ex http://localhost:10091/api/PdWorkOrderReport/view?CompSeq=1&PdProdPlan=PP2103030001)
  ---
 ## REST API 란?
@@ -220,6 +220,8 @@ public class PdWorkOrderReportController  extends CmmReportController<PdWorkOrde
 
  - REST하게 클라이언트랑 서버간에 데이터를 주고 받는 방식
  - 우리는 GET 방식으로 PDF를 요청 하고 있다.
+ - 우리가 HTTP Request를 파라미터와 함께 서버로 요청하면
+ - 서버에서 pdf를 생성하면 클라이언트로 HTTP Response 한다.
 
  ---
  - produces = MediaType.APPLICATION_PDF_VALUE 
@@ -254,7 +256,6 @@ this.setSource(orderService.selectList(pwo));
 - setReportPath: 리포트 파일 걍로 입력
 - putParameters: 객체 or key,value 로 파라미터에 등록 
 -  setSource: 배열 데이터 입력
-
 ---
 ## JASPER STUDIO
 ![bg right height:500](img/reportDesign.png)
