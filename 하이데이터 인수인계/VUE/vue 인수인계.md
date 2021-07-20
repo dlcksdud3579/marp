@@ -45,7 +45,34 @@ marp: false
  - 최초 구동느림
  - 검색엔진 최적화 이슈 존재
 ---
-# 프론트 엔드 개발
+## 개발 환경 설치
+1. Node.js 설치 (16.x.0 최신버전으로)
+    - [설치링크](https://nodejs.org/ko/)
+
+2. vscode 설치
+    - [설치링크](https://code.visualstudio.com/)
+    - Extention 추천(편리한 확장프로그램)
+        - [Korean Language Pack](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ko), [디버깅크롬](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome), [화이트테마](https://marketplace.visualstudio.com/items?itemName=akamud.vscode-theme-onelight)
+3. vue-cli 설치
+    -cmd창에 ``` npm install -g @vue/cli ``` 입력
+---
+4. sts 설치(4.x.0 최신버전)
+    -[설치링크](https://spring.io/tools)
+5. 설치 완료후 sts.jar 실행 
+    - 만약 자바 설치 되어 있지 않다면 설치 
+        - [설치링크](https://java.com/ko/download/ie_manual.jsp?locale=ko)
+6. java 를 통해 sts.jar 실행 
+ ```
+  >java -jar sts.jar
+ ```
+ ---
+7. sts 실행
+
+ ---
+## 프론트 엔드 개발
+![width:700](img/dir.png)
+
+---
  - Page : .vue 로 구성된 템플렛 컴포넌트, 하나의 파일이 하나의 화면 or 컴포넌트를 구성한다.
  - Service : axios를 통해 http 요청을통해 서버와 rest api로 데이토를 주고 받는다. 
  - Utils : 유용한 전역 함수 or 도구 
