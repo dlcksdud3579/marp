@@ -3,8 +3,8 @@ theme: gaia
 _class: lead 
 paginate: true
 backgroundColor: #fff
-backgroundImage: url('https://marp.app/assets/hero-background.jpg')
-marp: false
+backgroundImage: url('../hidataBg.jpg')
+marp: true
 ---
 # JSF 인수인계
 ### 작성: 이찬영
@@ -38,22 +38,21 @@ marp: false
 ## primeFace
 - JSF의 UI 컴포넌트 라이브러리로 많은 유용한 컴포넌트를 제공한다.
 ---
-# 프로젝트 자바 파일 구조
+## 프로젝트  구조
 
-![bg right](img\struct.png)
+![bg right height:500px](img\struct.png)
+
 ---
-# com.himes.food
+## com.himes.food
   - 스프링 부트 세큐리티 설정 자바 파일 
   - 보안설정 및 권한설정등 기능을 구현한다.
 
 ![bg right width:600px height:400px](img\security.png)
 
 ---
-
----
 ### SecurityConfig.java
 - confirgure() 함수를 오버라이딩하여 로그인 방식 접근제한 범위등을 지정 할수있다.
-- 참고(https://spring.io/guides/gs/securing-web/)
+- [참고 링크](https://spring.io/guides/gs/securing-web/)
 ### CustomAuthenticationProvider.java 
 - 인증 처리 과정을 커스텀하여 사용할수있다.
 - authenticate를 오버라이딩하여 사용자계정정보에 맞게 커스텀됨
@@ -67,8 +66,7 @@ marp: false
 ---
 ## Model
 
-
-![bg right width:600px height:400px](img/model.png)
+![ width:600px height:500px](img/model.png)
 
 --- 
 - C#의  ibatis 와 동일하게 모델을 통해서 데이터베이스와 통신합니다.
@@ -97,7 +95,7 @@ public class StDailyStockHs extends CmmModel {
 ````
 ---
 ## DAO
-![bg right width:600px height:400px](img/DAO.png)
+![ width:600px height:500px](img/DAO.png)
 
 ---
 - C#에서의 dao 와 동일한 기능
@@ -118,7 +116,7 @@ public interface StDailyStockHsDAO extends DAO<StDailyStockHs>{
 ---
 ## Service
  
-![bg right width:600px height:400px](img/service.png)
+![ width:600px height:500px](img/service.png)
 
 ---
 - C#의 Service 와 같은 기능을 하는 클래스 입니다.
@@ -143,7 +141,7 @@ public class StDailyStockHsService extends CmmService<StDailyStockHs>{
 ````
 ---
 ## Mapper
-![bg right width:600px height:400px](img/map.png)
+![width:600px height:500px](img/map.png)
 
 ---
 - 디비의 쿼리를 관리할 mapper.xml 입니다.
@@ -175,7 +173,7 @@ public class StDailyStockHsService extends CmmService<StDailyStockHs>{
 - URL: [MyBatis - 마이바티스 3 | 동적 SQL](https://mybatis.org/mybatis-3/ko/dynamic-sql.html)
 ---
 ## View 
-![bg right width:600px height:400px](img/view.png)
+![width:600px height:500px](img/view.png)
 
 ---
 - C#의 UI에서 controller 기능을 수행 합니다.
@@ -190,6 +188,7 @@ public class StDailyStockHsService extends CmmService<StDailyStockHs>{
 ---
 ## JSF MVC Architecture
  ![bg vertical width:900px height:400px](img/demoweb2.png)
+
 ---
 ## StDailyStockHsView.java
 ````
@@ -211,7 +210,7 @@ public class StDailyStockHsView extends CmmView {
 ````
 ---
 ## JSF pages
-![bg vertical width:900px height:400px](img/pages.png)
+![ width:800px height:400px](img/pages.png)
 
 ---
  - xhtml 파일로 구현
@@ -219,7 +218,8 @@ public class StDailyStockHsView extends CmmView {
  - primeface component를 활용하여 구현 하였습니다. 
  ````
  <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
@@ -228,7 +228,7 @@ public class StDailyStockHsView extends CmmView {
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
  ````
  ---
-# JSF pages 
+### inputText 
  ![](img/demo2.png)
 
  ````
@@ -240,11 +240,11 @@ public class StDailyStockHsView extends CmmView {
 </form>
  ````
 ---
-# JSF pages
+### dataTable
 ![bg width:900px height:420px ](img/demo3.png)
 
 ---
-## JSF pages 
+
 ```
 <p:dataTable id="mainTable" var="StDailyStockHs" styleClass="dataTable" 
     value="#{stDailyStockHsView.sdshList}" selection="#{stDailyStockHsView.selectedSdsh}"
@@ -265,7 +265,7 @@ public class StDailyStockHsView extends CmmView {
 ```
 ---
 
-# JSF pages
+### 차트
 ![](img/demo5.png)
 
 ````
@@ -274,7 +274,7 @@ public class StDailyStockHsView extends CmmView {
 ````
             
 ---
-# menu.xhtml
+### menu.xhtml
 ![width:1150px](img/menu.png)
 ````
 	<ui:include src="./menu.xhtml"></ui:include>

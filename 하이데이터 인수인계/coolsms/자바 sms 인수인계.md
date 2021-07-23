@@ -4,7 +4,7 @@ _class: lead
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('../hidataBg.jpg')
-marp: false
+marp: true
 ---
 # COOLSMS 인수인계
 ### 작성: 이찬영
@@ -37,14 +37,11 @@ AlarmApp
 
 ## CoolSmsAPI.java
 - CoolSmsAPI()
-    - 생성자
     - API 키 정보를 디비에서 조회하여 API 호출시 사용
-
 - sendMessage()
     - param1: toNumber  // 전화번호 
     - param2: Type    // 전송 방식  SMS(90바이트), LMS(장문 2,000바이트), MMS(장문+이미지), ATA(알림톡)
     - param3: text      // 전송 내용
-
 - getBalance()
     - 잔액조회 API 호출하여 로그를 남긴다.
 
@@ -58,4 +55,5 @@ AlarmApp
 - getData()
     - 디비로 부터 메세지 정보 조회
 ---
+
 
