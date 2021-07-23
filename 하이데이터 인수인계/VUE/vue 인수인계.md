@@ -4,7 +4,7 @@ _class: lead
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('../hidataBg.jpg')
-marp: true
+marp: false
 ---
 # Vue 인수인계
 ### 작성: 이찬영
