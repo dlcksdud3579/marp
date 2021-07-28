@@ -4,7 +4,7 @@ _class: lead
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('../hidataBg.jpg')
-marp: false
+marp: true
 ---
 # Vue 인수인계
 ### 작성: 이찬영
@@ -821,5 +821,66 @@ watch(
 ```
 - 두 컴포넌트는 같은 의미로 model 내부에는 업데이트 이벤트와 데이터가 한번에 자식 컴포넌트로 전달할수있다.
 
+---
+## Chrome 디버거 
+ - vscode 디버깅 확장 프로그램
+ - [설치 URL](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
 
+![width:500](img/chrome.png)
 
+---
+
+![width:500](img/chrome2.png)
+
+ - 설치를 눌러 설치를 진행후 vscode 재실행한다.
+---
+![width:500](img/debug.png)
+
+- `[Debug]vue.js:chrome` 옆 톱니모양 눌러 설정파일을 실행한다.
+---
+```
+// launch.json, 복사 붙여넣기 한다. 
+{ 
+  "version": "0.2.0",
+  "configurations": [
+   {
+      "type": "chrome",
+      "request": "launch",
+      "name": "[Debug] Vue.js: chrome",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}/src",
+      "breakOnLoad": true,
+      "sourceMapPathOverrides": {
+          "webpack:///src/*": "${webRoot}/*",
+          "webpack:///./src/*": "${webRoot}/*"
+      }
+    }
+  ]
+}
+```
+---
+## vue.config.js 설정
+```
+configureWebpack: {
+    devtool: 'source-map',
+    ...
+}
+
+```
+- 크롬 디버거에서 소스코드를 확인 할수있게 해준다.
+- 이를 활용하면 중단점 기능과 조사식 등의 디버깅 기능을 활용할수있다.
+---
+## 디버거 실행 
+- 실행버튼을 눌러 크롬을 실행
+- 중단점/조사식 기능을 확인 
+- 정상적으로 실행되면 설정이 완료 된것
+![bg left width:500](img/debug.png)
+---
+## Vue.js devtools
+- [설치 경로](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg?hl=ko)
+- 크롬 확장자로 실시간으로 vue의 변수 정보를 확인할수 있다.
+- [확장파일 관리](whale://extensions/) 에서 파일 URL에 대한 액세스 허용 을 체크하여 준다.
+- 크롬 재실행후 F12를 눌러 개발자 도구를 실행한다.
+![](img/devTool.png)
+---
+  
